@@ -25,13 +25,21 @@ export class FindUsComponent {
   }
 
   initMap() {
-    this.map = L.map('map').setView(this.location, 13);
+    this.map = L.map('map', {
+      maxZoom: 15,
+      minZoom: 10,
+    }).setView(this.location, 13);
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
 
-    L.marker(this.location).addTo(this.map)
-      .bindPopup('More Paintball')
-      .openPopup();
+    const icon = L.icon({
+      iconUrl: '../../../assets/map-icon.webp',
+      iconSize: [70, 70],
+      iconAnchor: [25, 25],
+      popupAnchor: [1, -34],
+    });
+
+    L.marker(this.location, { icon }).addTo(this.map)
   }
 }
