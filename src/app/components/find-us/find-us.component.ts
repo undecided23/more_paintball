@@ -18,8 +18,8 @@ import 'leaflet/dist/leaflet.css';
 })
 export class FindUsComponent {
   map!: L.Map;
-  location: L.LatLngExpression = [56.59337504675528, 16.16079803139656];
-  googleDirectionLink = 'https://www.google.com/maps/dir/?api=1&destination=56.59337504675528,16.16079803139656';
+  location: L.LatLngExpression = [56.530638590136626, 16.077687686052577];
+  googleDirectionLink = `https://www.google.com/maps/dir/?api=1&destination=${this.location.toString()}`;
   ngOnInit() {
     this.initMap();
   }
@@ -36,7 +36,7 @@ export class FindUsComponent {
     const icon = L.icon({
       iconUrl: '../../../assets/map-icon.webp',
       iconSize: [70, 70],
-      iconAnchor: [25, 25],
+      iconAnchor: [35, 35],
       popupAnchor: [1, -34],
     });
 
