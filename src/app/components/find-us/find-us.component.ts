@@ -1,17 +1,25 @@
 import { Component } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 import * as L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 
 @Component({
   selector: 'app-find-us',
   standalone: true,
-  imports: [],
+  imports: [
+    MatCardModule,
+    MatIconModule,
+    MatButtonModule
+  ],
   templateUrl: './find-us.component.html',
   styleUrl: './find-us.component.scss'
 })
 export class FindUsComponent {
   map!: L.Map;
   location: L.LatLngExpression = [56.59337504675528, 16.16079803139656];
+  googleDirectionLink = 'https://www.google.com/maps/dir/?api=1&destination=56.59337504675528,16.16079803139656';
   ngOnInit() {
     this.initMap();
   }

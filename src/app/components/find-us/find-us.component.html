@@ -1,1 +1,25 @@
-<div #map id="map"></div>
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Hitta hit
+        </mat-card-title>
+        <mat-card-subtitle>
+            ADRESS
+        </mat-card-subtitle>
+    </mat-card-header>
+    <div mat-card-image #map id="map"></div>
+    <mat-card-content>
+        <p>
+            More paintball ligger 20 minuter söder om Kalmar och hit tar man sig enklast med bil.
+            <br>
+            För att kunna erbjuda banor utöver det vanliga så har vi valt att bygga upp parken intill en skog som inte har någon adress. 
+            När du bokar ditt besök hos oss via more&apaintballkalmar.se kommer du få en mer detaljerad vägbeskrivning till parken. 
+        </p>
+    </mat-card-content>
+    <mat-card-actions>
+        <a target="_blank" href={{googleDirectionLink}} color="primary" mat-button>
+            <mat-icon>directions</mat-icon>
+            Vägbeskrivning
+        </a>
+    </mat-card-actions>
+</mat-card>
