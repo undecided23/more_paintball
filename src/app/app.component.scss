@@ -1,15 +1,21 @@
 .container {
-  height: 100vh;
-  width: 100vw;
-  margin-top: 4rem;
+    height: 100vh;
+    width: 100vw;
+    margin-top: 4rem;
 }
 
 .sidenav-content {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidenav {
+    background-image: url('../assets/paintball.png');
+    background-size: cover;
+    background-position: top;
 }
 
 mat-toolbar {
