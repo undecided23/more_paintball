@@ -2,8 +2,13 @@ import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
-import * as L from "leaflet";
-import 'leaflet/dist/leaflet.css';
+import { Overlay } from 'ol';
+
+import Map from 'ol/Map';
+import View from 'ol/View';
+import TileLayer from 'ol/layer/Tile';
+import { fromLonLat } from 'ol/proj';
+import { OSM } from 'ol/source';
 
 @Component({
   selector: 'app-find-us',
@@ -17,29 +22,44 @@ import 'leaflet/dist/leaflet.css';
   styleUrl: './find-us.component.scss'
 })
 export class FindUsComponent {
-  map!: L.Map;
-  location: L.LatLngExpression = [56.530638590136626, 16.077687686052577];
+  map!: Map;
+  location = [16.077687686052577, 56.530638590136626];
   googleDirectionLink = `https://www.google.com/maps/dir/?api=1&destination=${this.location.toString()}`;
   ngOnInit() {
     this.initMap();
   }
 
   initMap() {
-    this.map = L.map('map', {
-      maxZoom: 15,
-      minZoom: 10,
-    }).setView(this.location, 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(this.map);
-
-    const icon = L.icon({
-      iconUrl: '../../../assets/map-icon.webp',
-      iconSize: [70, 70],
-      iconAnchor: [35, 35],
-      popupAnchor: [1, -34],
+    this.map = new Map({
+      target: 'map',
+      layers: [
+        new TileLayer({
+          source: new OSM(),
+        })
+      ],
+      view: new View({
+        center: fromLonLat(this.location),
+        zoom: 13,
+        maxZoom: 16,
+        minZoom: 10,
+      }),
+      controls: [],
     });
 
-    L.marker(this.location, { icon }).addTo(this.map)
+    const markerElement = document.createElement('div');
+    markerElement.className = 'marker';
+    markerElement.style.backgroundImage = 'url(../../../assets/map-icon.webp)';
+    markerElement.style.width = '70px';
+    markerElement.style.height = '70px';
+    markerElement.style.backgroundSize = 'contain';
+
+    const marker = new Overlay({
+      position: fromLonLat(this.location),
+      positioning: 'center-center',
+      element: markerElement,
+      stopEvent: false
+    });
+
+    this.map.addOverlay(marker);
   }
 }
