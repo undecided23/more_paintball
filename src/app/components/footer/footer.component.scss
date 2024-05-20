@@ -1,0 +1,21 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+
+.footer-wrapper {
+    margin-top: auto;
+    background-color: black;
+}
+
+.instagram {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    border-radius: 7px;
+}
+
+.instagram:hover {
+    cursor: pointer;
+}
