@@ -14,9 +14,15 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
+  
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -33,9 +39,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: List directory contents
+        run: ls -R
+        working-directory: ${{ github.workspace }}
+
       # Build the Angular application
       - name: Build Angular app
-        run: npm run build -- --prod --base-href /more-paintball/
+        run: npm run build -- --configuration production --base-href /more_paintball/
+
+      - name: List build output
+        run: ls -R dist/more_paintball
+        working-directory: ${{ github.workspace }}
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
