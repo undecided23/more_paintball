@@ -12,7 +12,6 @@ import { RouterModule } from '@angular/router';
   imports: [
     MatToolbar,
     MatButtonModule,
-    RouterModule,
     MatIconModule,
     HttpClientModule
   ],
