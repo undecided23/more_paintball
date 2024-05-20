@@ -7,3 +7,10 @@ mat-card {
     max-width: 500px;
 }
 
+.marker {
+  display: block;
+  background: url('../../../assets/map-icon.webp') no-repeat center;
+  width: 70px;
+  height: 70px;
+  background-size: contain;
+}
