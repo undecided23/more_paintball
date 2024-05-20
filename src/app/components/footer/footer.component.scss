@@ -1,21 +1,9 @@
-.footer-container {
-    display: flex;
-    flex-direction: column;
-    min-height: 100%;
-}
-
-.footer-wrapper {
-    margin-top: auto;
-    background-color: black;
-}
-
 .instagram {
-    width: 30px;
-    height: 30px;
-    border-style: solid;
-    border-radius: 7px;
+    width: 1.5rem;
+    height: 1.5rem;
 }
 
-.instagram:hover {
-    cursor: pointer;
+.wizeguy-link {
+    font-size: 1.1rem;
+    margin-left: auto;
 }
