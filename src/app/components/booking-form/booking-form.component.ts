@@ -17,7 +17,7 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatCardModule,
+    MatCardModule
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './booking-form.component.html',
