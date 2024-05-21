@@ -5,7 +5,7 @@
         </mat-card-title>
     </mat-card-header>
     <mat-form-field>
-        <mat-label>Ange ditt namn</mat-label>
+        <mat-label>Ange ditt för- och efternamn</mat-label>
         <input matInput>
     </mat-form-field>
     <mat-form-field>
@@ -15,15 +15,11 @@
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
     <mat-form-field>
-        <mat-label>Önskad tid</mat-label>
-        <input matInput type="time">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Antal spelare</mat-label>
+        <mat-label>Antal personer</mat-label>
         <input matInput type="number">
     </mat-form-field>
     <mat-form-field color="primary">
-        <mat-label>Ange din emailadress</mat-label>
+        <mat-label>Ange din mailadress</mat-label>
         <input matInput placeholder="hello@example.com" [formControl]="userEmail" (blur)="controlUserEmail()" required>
         @if (userEmail.invalid) {
         <mat-error>
@@ -46,4 +42,6 @@
         <mat-label>Övrig information</mat-label>
         <textarea matInput></textarea>
     </mat-form-field>
+    <button mat-button color="primary" (click)="updateName()">BOKA</button>
+        <p>Value: {{name.value}}</p>
 </mat-card>

@@ -23,8 +23,7 @@ export class FooterComponent {
   instagramLink = 'https://www.instagram.com/more_paintball/';
   facebookLink = 'https://www.facebook.com/people/More-Paintball/61553086056125/'
 
-  constructor(private iconService: MatIconRegistry, private domSanitizer: DomSanitizer) {
-  }
+  constructor(private iconService: MatIconRegistry, private domSanitizer: DomSanitizer) {}
 
   ngOnInit() {
     this.iconService.addSvgIcon('instagram', this.domSanitizer.bypassSecurityTrustResourceUrl('assets/instagram.svg'));

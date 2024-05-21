@@ -6,6 +6,7 @@ import { FormControl, Validators, FormsModule, ReactiveFormsModule } from '@angu
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-booking-form',
@@ -17,7 +18,8 @@ import { MatCardModule } from '@angular/material/card';
     FormsModule,
     ReactiveFormsModule,
     MatDatepickerModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './booking-form.component.html',
@@ -25,11 +27,15 @@ import { MatCardModule } from '@angular/material/card';
 })
 export class BookingFormComponent {
   userEmail = new FormControl('', [Validators.required, Validators.email]);
-
+  name = new FormControl('');
   errorMessage = '';
 
   constructor () {
 
+  }
+
+  updateName() {
+    this.name.setValue("hampus")
   }
 
   controlUserEmail(): void {
