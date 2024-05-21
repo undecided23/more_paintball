@@ -5,21 +5,45 @@
         </mat-card-title>
     </mat-card-header>
     <mat-form-field>
-        <mat-label>Ange datum</mat-label>
+        <mat-label>Ange ditt namn</mat-label>
+        <input matInput>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Datum</mat-label>
         <input matInput [matDatepicker]="picker">
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
+    <mat-form-field>
+        <mat-label>Önskad tid</mat-label>
+        <input matInput type="time">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Antal spelare</mat-label>
+        <input matInput type="number">
+    </mat-form-field>
     <mat-form-field color="primary">
         <mat-label>Ange din emailadress</mat-label>
-        <input matInput
-            placeholder="hello@example.com"
-            [formControl]="userEmail"
-            (blur)="controlUserEmail()" required>
+        <input matInput placeholder="hello@example.com" [formControl]="userEmail" (blur)="controlUserEmail()" required>
         @if (userEmail.invalid) {
-            <mat-error>
-                {{errorMessage}}
-            </mat-error>
+        <mat-error>
+            {{errorMessage}}
+        </mat-error>
         }
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Telefonnummer</mat-label>
+        <input matInput type="tel">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Privat eller Företag</mat-label>
+        <mat-select>
+            <mat-option value="private">Privat</mat-option>
+            <mat-option value="company">Företag</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Övrig information</mat-label>
+        <textarea matInput></textarea>
     </mat-form-field>
 </mat-card>
