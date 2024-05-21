@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
-import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 import { Booking } from '../../types/booking.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MailingService {
-  private readonly SERVICE_ID = 'service_ze2r1vp';
-  private readonly TEMPLATE_ID = 'template_ym7vfaw';
-  private readonly PUBLIC_KEY = 'Lnl4U_s5mibknzcBQ';
-  private readonly TO_EMAIL = 'hampus.nilsson222@hotmail.se';
+  private readonly SERVICE_ID = environment.emailjs.serviceId;
+  private readonly TEMPLATE_ID = environment.emailjs.templateId;
+  private readonly PUBLIC_KEY = environment.emailjs.publicKey;
+  private readonly TO_EMAIL = environment.emailjs.toEmail;
 
   constructor() {
   }
