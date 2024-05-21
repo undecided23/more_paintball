@@ -1,0 +1,25 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Boka paintball
+        </mat-card-title>
+    </mat-card-header>
+    <mat-form-field>
+        <mat-label>Ange datum</mat-label>
+        <input matInput [matDatepicker]="picker">
+        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <mat-form-field color="primary">
+        <mat-label>Ange din emailadress</mat-label>
+        <input matInput
+            placeholder="hello@example.com"
+            [formControl]="userEmail"
+            (blur)="controlUserEmail()" required>
+        @if (userEmail.invalid) {
+            <mat-error>
+                {{errorMessage}}
+            </mat-error>
+        }
+    </mat-form-field>
+</mat-card>
