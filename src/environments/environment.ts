@@ -7,6 +7,6 @@ export const environment = {
         serviceId: 'service_ze2r1vp',
         templateId: 'template_ym7vfaw',
         publicKey: 'Lnl4U_s5mibknzcBQ',
-        toEmail: 'hampus.nilsson222@hotmail.se'
+        toEmail: 'ht222mi@student.lnu.se'
     }
 };
