@@ -30,7 +30,7 @@ export class MailingService {
       emailjs.send(this.SERVICE_ID, this.TEMPLATE_ID, templateParams, {
         publicKey: this.PUBLIC_KEY
       })
-        .then((_) => {
+        .then(() => {
           resolve();
         }, (error) => {
           reject(error);
