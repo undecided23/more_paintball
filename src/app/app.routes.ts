@@ -8,5 +8,9 @@ export const routes: Routes = [
     {
         path: 'find-us',
         loadComponent: () => import('./components/find-us/find-us.component').then(m => m.FindUsComponent)
+    },
+    {
+        path: 'booking-form',
+        loadComponent: () => import('./components/booking-form/booking-form.component').then(m => m.BookingFormComponent)
     }
 ];

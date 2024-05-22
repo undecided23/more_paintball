@@ -1,0 +1,38 @@
+mat-card {
+    width: 100rem;
+    margin: 0 auto;
+    max-width: 700px;
+    padding: 2rem;
+    margin-bottom: 3.3rem;
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+mat-card-title {
+    padding-bottom: 2rem;
+}
+
+mat-form-field {
+    width: 100%;
+    padding: 3px;
+}
+
+.field-group-one {
+    display: flex;
+    align-items: flex-start;
+}
+
+.field-group-two {
+    display: flex;
+    align-items: flex-start;
+}
+
+.field-group-three {
+    display: flex;
+    align-items: flex-start;
+}
+
+.field-group-four {
+    display: flex;
+    align-items: flex-start;
+}

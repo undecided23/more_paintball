@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { FooterComponent } from './components/footer/footer.component';
+import { BookingFormComponent } from './components/booking-form/booking-form.component';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +19,8 @@ import { FooterComponent } from './components/footer/footer.component';
     MatToolbarModule,
     MatDividerModule,
     RouterModule,
-    FooterComponent
+    FooterComponent,
+    BookingFormComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
