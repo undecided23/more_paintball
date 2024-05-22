@@ -1,10 +1,9 @@
 mat-card {
-    width: 100%;
-    max-width: 500px;
+    width: 90rem;
     margin: 0 auto;
-    padding: 4rem;
+    max-width: 700px;
+    padding: 2rem;
     margin-bottom: 3.3rem;
-    border-radius: 1rem;
     position: relative;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -15,4 +14,25 @@ mat-card-title {
 
 mat-form-field {
     width: 100%;
+    padding: 2px;
+}
+
+.field-group-one {
+    display: flex;
+    align-items: flex-start;
+}
+
+.field-group-two {
+    display: flex;
+    align-items: flex-start;
+}
+
+.field-group-three {
+    display: flex;
+    align-items: flex-start;
+}
+
+.field-group-four {
+    display: flex;
+    align-items: flex-start;
 }

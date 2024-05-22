@@ -24,7 +24,7 @@ import { CommonModule } from '@angular/common';
     MatDatepickerModule,
     MatCardModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [provideNativeDateAdapter()],
   templateUrl: './booking-form.component.html',

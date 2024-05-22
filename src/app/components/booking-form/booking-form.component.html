@@ -6,42 +6,50 @@
     </mat-card-header>
     <form [formGroup]="bookingForm" (submit)="handleBooking()" action="#">
 
-
-    <mat-form-field>
-        <mat-label>Ange ditt för- och efternamn</mat-label>
-        <input formControlName="name" matInput>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Datum</mat-label>
-        <input matInput formControlName="date" [matDatepicker]="picker">
-        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-        <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Antal personer</mat-label>
-        <input matInput formControlName="people" type="number">
-    </mat-form-field>
-    <mat-form-field color="primary">
-        <mat-label>Ange din mailadress</mat-label>
-        <input matInput formControlName="email" placeholder="hello@example.com">
-        <mat-error>
-            {{errorMessage}}
-        </mat-error>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Telefonnummer</mat-label>
-        <input matInput formControlName="phone" type="tel">
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Privat eller Företag</mat-label>
-        <mat-select formControlName="booker_type">
-            <mat-option *ngFor="let bookerType of bookerTypes" [value]=bookerType.value>{{bookerType.viewValue}}</mat-option>
-        </mat-select>
-    </mat-form-field>
-    <mat-form-field>
-        <mat-label>Övrig information</mat-label>
-        <textarea formControlName="message" matInput></textarea>
-    </mat-form-field>
-    <button (click)="handleBooking()" mat-flat-button color="primary">BOKA</button>
-</form>
+        <div class="field-group-one">
+            <mat-form-field>
+                <mat-label>Ange ditt för- och efternamn</mat-label>
+                <input formControlName="name" matInput>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Datum</mat-label>
+                <input matInput formControlName="date" [matDatepicker]="picker">
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+        </div>
+        <div class="field-group-two">
+            <mat-form-field>
+                <mat-label>Antal personer</mat-label>
+                <input matInput formControlName="people" type="number">
+            </mat-form-field>
+            <mat-form-field color="primary">
+                <mat-label>Ange din mailadress</mat-label>
+                <input matInput formControlName="email" placeholder="hello@example.com">
+                <mat-error>
+                    {{errorMessage}}
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="field-group-three">
+            <mat-form-field>
+                <mat-label>Telefonnummer</mat-label>
+                <input matInput formControlName="phone" type="tel">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Privat eller Företag</mat-label>
+                <mat-select formControlName="booker_type">
+                    <mat-option *ngFor="let bookerType of bookerTypes"
+                        [value]=bookerType.value>{{bookerType.viewValue}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="field-group-four">
+            <mat-form-field>
+                <mat-label>Övrig information</mat-label>
+                <textarea formControlName="message" matInput></textarea>
+            </mat-form-field>
+        </div>
+        <button (click)="handleBooking()" mat-flat-button color="primary">BOKA</button>
+    </form>
 </mat-card>
