@@ -1,10 +1,13 @@
 #map {
-    height: 400px;
-    margin: 20px 0;
+  height: 300px;
+  margin: 20px 0;
+  width: 100%; /* Ensure the map takes the full width of the container */
+  box-sizing: border-box;
 }
 
 mat-card {
-    max-width: 500px;
+  background-color: rgb(138, 208, 138);
+  box-sizing: border-box;
 }
 
 .marker {
