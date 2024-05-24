@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
@@ -21,7 +21,7 @@ import { OSM } from 'ol/source';
   templateUrl: './find-us.component.html',
   styleUrl: './find-us.component.scss'
 })
-export class FindUsComponent {
+export class FindUsComponent implements OnInit {
   map!: Map;
   location = [16.077687686052577, 56.530638590136626];
   googleDirectionLink = `https://www.google.com/maps/dir/?api=1&destination=${this.location.toString()}`;
