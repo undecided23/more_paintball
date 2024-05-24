@@ -1,0 +1,24 @@
+a {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    color: white;
+}
+
+.hide {
+    transform: translateX(3rem);
+    transition: all 0.1s;
+}
+
+:not(.hide) {
+    transition: all 0.1s;
+}
+
+.raised {
+    transform: translateY(-60px);
+    transition: all 0.1s;
+}
+
+:not(.raised) {
+    transition: all 0.1s;
+}
