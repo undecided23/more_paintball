@@ -7,6 +7,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ import { HeaderComponent } from './components/header/header.component';
     MatDividerModule,
     RouterModule,
     FooterComponent,
-    HeaderComponent
+    HeaderComponent,
+    LayoutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'

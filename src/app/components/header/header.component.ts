@@ -17,23 +17,23 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   public links: Link[] = [
     {
-      title: 'Home',
-      path: '/',
+      title: 'Hem',
+      path: '/#home',
       icon: 'home'
     },
     {
-      title: 'Find us',
-      path: '/find-us',
+      title: 'Banor',
+      path: '/#maps',
       icon: 'map'
     },
     {
-      title: 'About us',
-      path: '/about-us',
+      title: 'Om oss',
+      path: '/#about',
       icon: 'info'
     },
     {
-      title: 'Contact us',
-      path: '/contact-us',
+      title: 'Boka',
+      path: '/#booking',
       icon: 'email'
     }
   ]

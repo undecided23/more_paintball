@@ -5,7 +5,7 @@
     <ul class="link-container">
         @for (link of links; track link.title ) {
             <li>
-                <a routerLink="{{link.path}}" color="primary" mat-fab extended class="nav-link">
+                <a href={{link.path}} color="primary" mat-fab extended class="nav-link">
                     <mat-icon>{{link.icon}}</mat-icon>
                     {{link.title}}
                 </a>
