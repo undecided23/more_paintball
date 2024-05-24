@@ -7,7 +7,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-header',
   standalone: true,
   imports: [
-    RouterModule,
     MatIconModule,
     MatDividerModule
   ],

@@ -13,13 +13,11 @@ import { LayoutComponent } from './components/layout/layout.component';
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatDividerModule,
-    RouterModule,
     FooterComponent,
     HeaderComponent,
     LayoutComponent
