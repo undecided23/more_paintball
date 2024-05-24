@@ -1,16 +1,27 @@
-<div class="container">
-    <h1>
-        More Paintball
-    </h1>
-    <ul class="link-container">
+@if (isOnMobile()) {
+    <div class="mobile-container">
+        <button color="primary" mat-icon-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+        <mat-menu #menu="matMenu">
         @for (link of links; track link.title ) {
-            <li>
-                <a href={{link.path}} color="primary" mat-fab extended class="nav-link">
-                    <mat-icon>{{link.icon}}</mat-icon>
-                    {{link.title}}
-                </a>
-                <mat-divider></mat-divider>
-            </li>
+            <a mat-menu-item href={{link.path}}>
+                <mat-icon>{{link.icon}}</mat-icon>
+                <span>{{link.title}}</span>
+            </a>
         }
-    </ul>
-</div>
+        </mat-menu>
+    </div>
+} @else {
+    <div class="container">
+        <ul class="link-container">
+            @for (link of links; track link.title ) {
+                <li>
+                    <a href={{link.path}} color="primary" class="nav-link">
+                        <mat-icon>{{link.icon}}</mat-icon>
+                        {{link.title}}
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+}
+
