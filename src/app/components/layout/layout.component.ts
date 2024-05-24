@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { FindUsComponent } from '../find-us/find-us.component';
 import { HomeComponent } from '../home/home.component';
 import { MapsComponent } from '../maps/maps.component';
+import { AboutUsComponent } from '../about-us/about-us.component';
 
 @Component({
   selector: 'app-layout',
@@ -9,7 +10,8 @@ import { MapsComponent } from '../maps/maps.component';
   imports: [
     FindUsComponent,
     HomeComponent,
-    MapsComponent
+    MapsComponent,
+    AboutUsComponent
   ],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss'
