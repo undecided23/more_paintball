@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px; /* Add some padding if needed */
+}
+
+.inner-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60vh;
+    box-sizing: border-box;
+    width: 100%; /* Ensure it doesn't go outside the container */
+    margin-bottom: 20px; /* Add space between inner containers */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    box-sizing: border-box;
+}
+
+app-find-us {
+    width: 100%;
+    max-width: 600px; /* Set a reasonable max-width to prevent excessive stretching */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center; /* Center the content */
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+}
+
+p {
+    font-size: 1.2rem;
+    flex: 1;
+    padding: 10px;
+    box-sizing: border-box;
+    margin: 0; /* Remove default margin */
+}
+
+@media screen and (max-width: 768px) {
+    .inner-container {
+        flex-direction: column;
+        height: auto; /* Allow height to adjust in column mode */
+    }
+
+    img, app-find-us, p {
+        width: 100%;
+        max-width: 100%;
+    }
+}
