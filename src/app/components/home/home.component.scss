@@ -1,0 +1,39 @@
+.logo {
+    position: fixed;
+    top: 10rem;
+    width: 40rem;
+    z-index: -1;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    height: 100vh;
+}
+
+.background {
+    width: 100%;
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        height: 100vh;
+    }
+
+    .logo {
+        width: 20rem;
+    }
+}

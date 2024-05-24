@@ -1,14 +1,17 @@
 import { Component } from '@angular/core';
-import { MatDividerModule } from '@angular/material/divider';
-import { MatIcon, MatIconModule } from '@angular/material/icon';
-import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatRippleModule } from '@angular/material/core';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
+import { DeviceDetectorService } from 'ngx-device-detector';
 
 @Component({
   selector: 'app-header',
   standalone: true,
   imports: [
     MatIconModule,
-    MatDividerModule
+    MatMenuModule,
+    MatButtonModule,
   ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
@@ -16,26 +19,35 @@ import { RouterModule } from '@angular/router';
 export class HeaderComponent {
   public links: Link[] = [
     {
-      title: 'Hem',
+      title: 'HEM',
       path: '/#home',
       icon: 'home'
     },
     {
-      title: 'Banor',
+      title: 'BANOR',
       path: '/#maps',
       icon: 'map'
     },
     {
-      title: 'Om oss',
+      title: 'OM OSS',
       path: '/#about',
       icon: 'info'
     },
     {
-      title: 'Boka',
+      title: 'BOKA',
       path: '/#booking',
       icon: 'email'
     }
   ]
+
+  constructor(private deviceDetector: DeviceDetectorService) { }
+
+  public isOnMobile() {
+    if (!this.deviceDetector.isDesktop()) {
+      return true;
+    }
+    return false;
+  }
 
 }
 
