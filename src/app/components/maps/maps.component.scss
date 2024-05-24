@@ -1,0 +1,53 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: transparent;
+    padding: 4rem;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+    height: 350px;
+    object-fit: cover;
+}
+
+.map-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: 30%;
+    height: 500px;
+    transition: all 0.1s ease-in-out;
+
+    & h2 {
+        margin-top: 1rem;
+        font-size: xx-large;
+    }
+
+    & p {
+        margin-top: 1rem;
+        font-size: large;
+    }
+
+    &:hover {
+        transform: scale(1.01);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        padding: 2rem;
+    }
+
+    .map-container {
+        width: 90vw;
+    }
+    
+}
+

@@ -1,0 +1,9 @@
+<div class="container">
+    @for (map of maps; track map.name) {
+        <div class="map-container">
+            <img src={{map.image}} alt="">
+            <h2>{{map.name}}</h2>
+            <p>{{map.description}}</p>
+        </div>
+    }
+</div>
