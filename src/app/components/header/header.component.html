@@ -1,0 +1,16 @@
+<div class="container">
+    <h1>
+        More Paintball
+    </h1>
+    <ul class="link-container">
+        @for (link of links; track link.title ) {
+            <li>
+                <a routerLink="{{link.path}}" color="primary" mat-fab extended class="nav-link">
+                    <mat-icon>{{link.icon}}</mat-icon>
+                    {{link.title}}
+                </a>
+                <mat-divider></mat-divider>
+            </li>
+        }
+    </ul>
+</div>
