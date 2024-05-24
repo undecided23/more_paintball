@@ -7,6 +7,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { FooterComponent } from './components/footer/footer.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LayoutComponent } from './components/layout/layout.component';
+import { BackToTopComponent } from './components/back-to-home/back-to-top.component';
 
 @Component({
   selector: 'app-root',
@@ -19,7 +20,8 @@ import { LayoutComponent } from './components/layout/layout.component';
     MatDividerModule,
     FooterComponent,
     HeaderComponent,
-    LayoutComponent
+    LayoutComponent,
+    BackToTopComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
