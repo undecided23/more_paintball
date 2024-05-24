@@ -1,0 +1,50 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    animation: slide-in 0.3s ease;
+    position: fixed;
+    width: 100%;
+
+    & h1 {
+        // color: gray;
+        margin-left: 50px;
+        margin-bottom: 0;
+    }
+}
+
+.link-container {
+    text-decoration: none;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 50px;
+
+    & a {
+        text-decoration: none;
+        margin-right: 20px;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            color: rgba(255, 255, 255, 0.932);
+        }
+
+        &:active {
+            color: rgb(255, 255, 255);
+        }
+    }
+}
+
+@keyframes slide-in {
+    0% {
+        transform: translateY(-120%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+    
+}

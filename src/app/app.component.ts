@@ -6,19 +6,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatDividerModule } from '@angular/material/divider';
 import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { LayoutComponent } from './components/layout/layout.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    RouterOutlet,
     MatSidenavModule,
     MatButtonModule,
     MatIconModule,
     MatToolbarModule,
     MatDividerModule,
-    RouterModule,
-    FooterComponent
+    FooterComponent,
+    HeaderComponent,
+    LayoutComponent
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
