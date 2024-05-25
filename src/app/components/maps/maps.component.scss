@@ -5,13 +5,12 @@
     align-items: center;
     background: transparent;
     padding: 4rem;
+    height: min-content;
 }
 
 img {
-    width: 100%;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    height: 350px;
+    width: 80%;
+    border-radius: 50% 50% 50% 50% / 12% 12% 88% 88%;
     object-fit: cover;
 }
 
@@ -22,25 +21,20 @@ img {
     align-items: center;
     text-align: center;
     width: 30%;
-    height: 500px;
-    transition: all 0.1s ease-in-out;
+    height: min-content;
     background-color: rgb(251, 251, 251);
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    box-shadow: 0px 0px 10px 0px rgb(118, 32, 118);
 
     & h2 {
         background-color: rgb(174, 47, 174);
-        padding: .5rem;
+        padding: 1rem;
         box-shadow: 5px 5px 0px 0px rgb(118, 32, 118);
-        transform: rotate(+2deg);
         border-radius: 2px;
         margin-top: 1rem;
-        font-size: xx-large;
+        font-size: 3rem;
         color: white;
+        font-family: 'Audiowide', sans-serif;
         letter-spacing: 2px;
+        max-width: 80%;
     }
 
     & p {
