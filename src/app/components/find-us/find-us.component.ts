@@ -24,7 +24,7 @@ import { OSM } from 'ol/source';
 export class FindUsComponent implements OnInit {
   map!: Map;
   location = [16.077687686052577, 56.530638590136626];
-  googleDirectionLink = `https://www.google.com/maps/dir/?api=1&destination=${this.location.toString()}`;
+  googleDirectionLink = `https://www.google.com/maps/dir/?api=1&destination=${this.location[1]},${this.location[0]}`;
   ngOnInit() {
     this.initMap();
   }
