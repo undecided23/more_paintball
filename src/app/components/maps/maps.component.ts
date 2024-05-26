@@ -13,17 +13,17 @@ export class MapsComponent {
   public maps: PaintballMap[] = [
     {
       name: 'Lost Forest',
-      image: 'assets/lostforest.webp',
+      image: 'assets/lost-forest.jpeg',
       description: 'Klassisk skogsbana i kuperad terräng och gott om gömställen!'
     },
     {
       name: 'Speedball',
-      image: 'assets/speedball.webp',
+      image: 'assets/speed-ball.jpeg',
       description: 'Old school speedball med högt tempo och snabba matcher.'
     },
     {
       name: 'Ghost Town',
-      image: 'assets/ghosttown.webp',
+      image: 'assets/ghost-town.jpeg',
       description: 'En bana i urban miljö med containrar och fordon. Föreställ er en öde by med gott om gömställen och skottgluggar!'
     }
   ];

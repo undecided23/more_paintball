@@ -7,6 +7,8 @@
     animation: slide-in 0.4s ease-out;
     position: fixed;
     width: 100%;
+    mix-blend-mode: difference;
+    z-index: 1000;
 
     & h1 {
         margin-left: 50px;
