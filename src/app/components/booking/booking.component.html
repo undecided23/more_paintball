@@ -1,49 +1,66 @@
 <div class="container">
+    <div class="pricing">
+        <h1 class="title">Våra Priser</h1>
+        <p>
+            Hos oss betalar du enkelt med swish. Vid fakturering för företag skall detta meddelas vid bokningstillfället.
+            Vi har ej möjlighet att ta kort på plats.
+            <br>
+
+            Ni kan vara hur få ni vill, men vi tar betalt för minimum 8 personer.
+            <br>
+
+            Mask, markör, fri luft, en påse med paintballkulor och camouflageoverall. Ett spel tar ungefär 2 tim.
+            400 SEK/PERSON
+            <br>
+
+            Det går bra att köpa extra paintballkulor i lösvikt eller hela påsar.</p>
+    </div>
     <div class="booking">
-        <mat-stepper orientation="vertical" linear #stepper>
-        <mat-step [stepControl]="bookingGroup">
-            <form [formGroup]="bookingGroup">
-            <ng-template matStepLabel>Fyll i dina önskemål inför din bokning</ng-template>
-            <div class="fields">
-                <mat-form-field>
-                    <mat-label>Namn</mat-label>
-                    <input matInput placeholder="Last name, First name" formControlName="name" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Antal spelare</mat-label>
-                    <input matInput formControlName="numberOfPlayers" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Email</mat-label>
-                    <input matInput type="email" formControlName="email" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Mobilnummer</mat-label>
-                    <input type="number" matInput formControlName="phone" required>
-                </mat-form-field>
-                <mat-form-field>
-                    <mat-label>Type</mat-label>
-                    <mat-select formControlName="type">
-                        @for (type of types; track type) {
-                            <mat-option value={{type}}>{{type}}</mat-option>
-                        }
-                    </mat-select>
-                </mat-form-field>
-    
-                </div>
-                <div>
-                <button color="primary" (click)="setTableData()" mat-raised-button matStepperNext>Nästa sida</button>
-                </div>
-            </form>
-        </mat-step>
-        <mat-step>
-            <ng-template matStepLabel>Skicka bokningsförfrågan</ng-template>
-            <div class="info">
-                <h2>Din bokningsförfrågan är färdig att skickas</h2>
-                <p>Klicka på "Skicka" för att skicka din bokningsförfrågan</p>
-                <p>När vi har kollat på din bokningsförfrågan återkommer vi så snart vi kan!</p>
-                <div class="preview">
-                    @if(!isOnMobile()) {
+        <mat-stepper orientation="vertical" linear="false" #stepper>
+            <mat-step [stepControl]="bookingGroup">
+                <form [formGroup]="bookingGroup">
+                    <ng-template matStepLabel>Fyll i dina önskemål inför din bokning</ng-template>
+                    <div class="fields">
+                        <mat-form-field>
+                            <mat-label>Namn</mat-label>
+                            <input matInput placeholder="Förnamn, Efternamn" formControlName="name" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Antal spelare</mat-label>
+                            <input matInput formControlName="numberOfPlayers" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="exempel@hotmail.se" type="email" formControlName="email" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Mobilnummer</mat-label>
+                            <input type="number" placeholder="0730123456" matInput formControlName="phone" required>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-label>Bokningstyp</mat-label>
+                            <mat-select formControlName="type">
+                                @for (type of types; track type) {
+                                <mat-option value={{type}}>{{type}}</mat-option>
+                                }
+                            </mat-select>
+                        </mat-form-field>
+
+                    </div>
+                    <div>
+                        <button color="primary" (click)="setTableData()" mat-raised-button matStepperNext>Nästa
+                            sida</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Skicka bokningsförfrågan</ng-template>
+                <div class="info">
+                    <h2>Din bokningsförfrågan är färdig att skickas</h2>
+                    <p>Klicka på "Skicka" för att skicka din bokningsförfrågan</p>
+                    <p>När vi har kollat på din bokningsförfrågan återkommer vi så snart vi kan!</p>
+                    <div class="preview">
+                        @if(!isOnMobile()) {
                         <table mat-table [dataSource]="dataSource">
                             <ng-container matColumnDef="name">
                                 <th mat-header-cell *matHeaderCellDef>Namn</th>
@@ -69,7 +86,7 @@
                             <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
                             <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
                         </table>
-                    } @else {
+                        } @else {
                         <div class="mobile-preview">
                             <div class="mobile-field">
                                 <b>Namn</b>
@@ -92,16 +109,14 @@
                                 <p>{{bookingGroup.value.type}}</p>
                             </div>
                         </div>
-                    }
+                        }
+                    </div>
                 </div>
-            </div>
-            <div>
-            <button color="primary" mat-raised-button (click)="sendBookingRequest()" >Skicka förfrågan</button>
-            <button color="warn" mat-raised-button (click)="stepper.reset()">Avbryt</button>
-            </div>
-        </mat-step>
+                <div>
+                    <button color="primary" mat-raised-button (click)="sendBookingRequest()">Skicka förfrågan</button>
+                    <button color="warn" mat-raised-button (click)="stepper.reset()">Avbryt</button>
+                </div>
+            </mat-step>
         </mat-stepper>
-    </div>
-    <div class="pricing">
     </div>
 </div>

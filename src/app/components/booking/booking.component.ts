@@ -82,12 +82,12 @@ export class BookingComponent {
   async sendBookingRequest() {
     this.mailingService.sendBookingRequest(this.bookingGroup.value as Booking)
       .then(() => {
-        this.snackBar.open('Booking request sent successfully!', 'Close', {
+        this.snackBar.open('Din bokningsförfrågan är skickad!', 'Stäng', {
           duration: 5000
         });
       })
       .catch(() => {
-        this.snackBar.open('Failed to send booking request. Please try again later.', 'Close', {
+        this.snackBar.open('Ett fel inträffade vid bokningen, vänligen försök igen vid ett senare tilfälle.', 'Stäng', {
           duration: 5000,
         });
       });
